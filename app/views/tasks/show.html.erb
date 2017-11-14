@@ -1,0 +1,13 @@
+
+<h2> <%= @task.name %> <%= @task.done ? "[X]" : "[ ]" %> </h2>
+<h3> <%= @task.description %> </h3>
+<h4> created: <%= @task.created_at %> </h4>
+
+<%= form_for(@task) do |t| %>
+<%= t.hidden_field :done, value: !@task.done  %>
+<%= t.submit @task.done ? "not done" : "done" %>
+<% end %>
+
+<%= link_to "back", tasks_path %>
+<%= link_to "edit", edit_task_path%>
+<%= link_to "delet task", task_path(@task), method: :delete %>

@@ -1,0 +1,7 @@
+
+
+<%= form_for(@task) do |t| %>
+  <h3>Name: <%= t.text_field :name %></h3>
+  <h3>Description: <%= t.text_field :description %></h3>
+  <%= t.submit %>
+<% end %>
